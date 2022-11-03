@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Components</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      div {
+        background-color: yellow;
+      }
+      html {
+        --color-primary: #a4fcda;
+        font-family: sans-serif;
+      }
+    </style>
+    <script src="tooltip.js"></script>
+  </head>
+  <body>
+    <div><p>Example div</p></div>
+    <uc-tooltip text="Web Components is a set of standards.">
+      <span>Web Components</span>
+    </uc-tooltip>
+    are awesome!
+    <br>
+    <br>
+    <uc-tooltip></uc-tooltip>
+  </body>
+</html>

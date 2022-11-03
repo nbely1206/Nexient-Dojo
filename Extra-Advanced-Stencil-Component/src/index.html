@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/dojo-components.esm.js"></script>
+    <script nomodule src="/build/dojo-components.js"></script>
+  </head>
+  <style>
+    aside {
+      background-color: yellow;
+    }
+  </style>
+  <body>
+    <button id="side-drawer-btn">Open Side Menu</button>
+    <side-drawer menu-title="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li>A Link</li>
+          <li>Another Link</li>
+          <li>A Third Link</li>
+        </ul>
+      </nav>
+    </side-drawer>
+  </body>
+
+  <script>
+    const sideDrawerButton = document.querySelector('#side-drawer-btn');
+    
+    sideDrawerButton.addEventListener('click', async () => {
+        await customElements.whenDefined('side-drawer')
+        const sideDrawer = document.querySelector('side-drawer');
+        if (!sideDrawer.opened) {
+          console.log('Opening side drawer...');
+          sideDrawer.openDrawer();
+        }
+    });
+
+    sideDrawerButton.addEventListener('click', async () => {
+        const sideDrawer = document.querySelector('side-drawer');
+    });
+  </script>
+</html>
